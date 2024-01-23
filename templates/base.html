@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>{{title}}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Alejandro Yuste</h1>
+		</header>
+		<main>
+			<nav>
+				<a hx-get="/home" hx-target="#content" hx-swap="innerHTML"><p>Home</p></a>
+				<a hx-get="/experience" hx-target="#content" hx-swap="innerHTML"><p>Experience</p></a>
+				<a hx-get="/projects" hx-target="#content" hx-swap="innerHTML"><p>Proyects</p></a>
+				<a hx-get="/blog" hx-target="#content" hx-swap="innerHTML"><p>Blog</p></a>
+				<a hx-get="/contact" hx-target="#content" hx-swap="innerHTML"><p>Contact</p></a>
+			</nav>
+			<section id="content">
+				<div
+					hx-trigger="load"
+					hx-get="/home"
+					hx-swap="outerHTML"
+				></div>
+			</section>
+		</main>
+		<footer>
+			<a href="#">@GitHub</a>
+			<a href="#">@Instagram</a>
+			<a href="#">@Twitter</a>
+		</footer>
+	</body>
+</html>
