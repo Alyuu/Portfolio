@@ -8,7 +8,7 @@ use tower_http::services::ServeDir;
 
 #[shuttle_runtime::main]
 async fn main() -> shuttle_axum::ShuttleAxum {
-    let mut router = Router::new()
+    let router = Router::new()
         .route("/", get(base))
         .route("/home", get(home))
         .route("/experience", get(experience))
