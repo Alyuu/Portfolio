@@ -122,17 +122,53 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: stretch;
+
+	overflow: hidden;
 }
 
 /* Header */
 header {
 	height: 10vh;
+	width: 100%;
 
 	display: flex;
 	align-items: center;
+	position: relative;
 
 	padding: 0 20px;
 	border: 2px solid var(--fg-color);
+}
+
+header.closed {
+	position: absolute;
+	top: -10vh;
+}
+
+header .close {
+	height: 20px;
+	width: 50px;
+
+	position: absolute;
+	bottom: -20px;
+	right: 0;
+
+	background: var(--fg-color);
+
+	border: none;
+}
+
+header .close:hover {
+	cursor: pointer;
+}
+
+header .close p {
+	color: var(--bg-color);
+
+	rotate: 90deg;
+}
+
+header.closed .close p {
+	rotate: 270deg;
 }
 
 header h1 {
@@ -197,13 +233,48 @@ main #content {
 /* Footer */
 footer {
 	height: 10vh;
+	width: 100%;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
 
+	position: relative;
+
 	border: 2px solid var(--fg-color);
+}
+
+footer.closed {
+	position: absolute;
+	bottom: -10vh;
+}
+
+footer .close {
+	height: 20px;
+	width: 50px;
+
+	position: absolute;
+	top: -20px;
+	right: 0;
+
+	background: var(--fg-color);
+
+	border: none;
+}
+
+footer .close:hover {
+	cursor: pointer;
+}
+
+footer .close p {
+	color: var(--bg-color);
+
+	rotate: 270deg;
+}
+
+footer.closed .close p {
+	rotate: 90deg;
 }
 
 footer a {
