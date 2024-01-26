@@ -134,14 +134,18 @@ header {
 	display: flex;
 	align-items: center;
 	position: relative;
+	z-index: 10;
 
 	padding: 0 20px;
 	border: 2px solid var(--fg-color);
+
+	transition: ease-in-out 0.5s;
 }
 
 header.closed {
-	position: absolute;
-	top: -10vh;
+	margin-top: -10vh;
+
+	transition: ease-in-out 0.7s;
 }
 
 header .close {
@@ -181,16 +185,55 @@ main {
 
 	display: flex;
 	flex-direction: row;
+
+	position: relative;
 }
 
 /* Body - Nav */
 main nav {
-	flex: 0 0 20vw;
+	width: 20vw;
+	height: 100%;
 
 	display: flex;
 	flex-direction: column;
 
+	position: relative;
+
 	border: 2px solid var(--fg-color);
+
+	transition: ease-in-out 0.5s;
+}
+
+main nav.closed {
+	margin-left: -20vw;
+
+	transition: ease-in-out 0.7s;
+}
+
+main nav .close {
+	width: 20px;
+	height: 50px;
+
+	position: absolute;
+	right: -20px;
+	top: 0;
+
+	background: var(--fg-color);
+
+	border: none;
+}
+
+main nav .close:hover {
+	cursor: pointer;
+}
+
+main nav .close p {
+	color: var(--bg-color);
+
+}
+
+main nav.closed .close p {
+	rotate: 180deg;
 }
 
 main nav a {
@@ -225,7 +268,7 @@ main #content {
 	flex: 1 1 auto;
 
 	border: 2px solid var(--fg-color);
-	padding: 10px 20px;
+	padding: 20px 40px;
 
 	text-align: justify;
 }
@@ -243,11 +286,14 @@ footer {
 	position: relative;
 
 	border: 2px solid var(--fg-color);
+
+	transition: ease-in-out 0.5s;
 }
 
 footer.closed {
-	position: absolute;
-	bottom: -10vh;
+	margin-bottom: -10vh;
+
+	transition: ease-in-out 0.7s;
 }
 
 footer .close {
