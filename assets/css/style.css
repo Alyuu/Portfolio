@@ -116,7 +116,7 @@
 }
 
 body {
-	height: 100vh;
+	height: 100dvh;
 	background: var(--bg-color);
 
 	display: flex;
@@ -161,6 +161,19 @@ header .close {
 	border: none;
 }
 
+header .close::after {
+	content: "";
+
+	position: absolute;
+	top: 0;
+	left: -20px;
+
+	border-top: 10px solid var(--fg-color);
+	border-right: 10px solid var(--fg-color);
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
 header .close:hover {
 	cursor: pointer;
 }
@@ -169,10 +182,14 @@ header .close p {
 	color: var(--bg-color);
 
 	rotate: 90deg;
+
+	transition: ease-in-out 0.5s;
 }
 
 header.closed .close p {
 	rotate: 270deg;
+
+	transition: ease-in-out 0.7s;
 }
 
 header h1 {
@@ -223,6 +240,19 @@ main nav .close {
 	border: none;
 }
 
+main nav .close::after {
+	content: "";
+
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+
+	border-top: 10px solid var(--fg-color);
+	border-left: 10px solid var(--fg-color);
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
 main nav .close:hover {
 	cursor: pointer;
 }
@@ -230,10 +260,13 @@ main nav .close:hover {
 main nav .close p {
 	color: var(--bg-color);
 
+	transition: ease-in-out 0.5s;
 }
 
 main nav.closed .close p {
 	rotate: 180deg;
+
+	transition: ease-in-out 0.7s;
 }
 
 main nav a {
@@ -309,6 +342,19 @@ footer .close {
 	border: none;
 }
 
+footer .close::after {
+	content: "";
+
+	position: absolute;
+	bottom: 0;
+	left: -20px;
+
+	border-bottom: 10px solid var(--fg-color);
+	border-right: 10px solid var(--fg-color);
+	border-left: 10px solid transparent;
+	border-top: 10px solid transparent;
+}
+
 footer .close:hover {
 	cursor: pointer;
 }
@@ -317,10 +363,14 @@ footer .close p {
 	color: var(--bg-color);
 
 	rotate: 270deg;
+
+	transition: ease-in-out 0.5s;
 }
 
 footer.closed .close p {
 	rotate: 90deg;
+
+	transition: ease-in-out 0.7s;
 }
 
 footer a {
